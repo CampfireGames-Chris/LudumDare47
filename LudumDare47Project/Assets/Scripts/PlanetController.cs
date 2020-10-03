@@ -9,20 +9,37 @@ public class PlanetController : MonoBehaviour
 
     public GameObject spinner;
 
+    public GameObject planet;
+
     public Camera cam;
+
+    [Space]
 
     public int spinSpeed;
 
-    // Start is called before the first frame update
+    [Space]
+
+    public bool keyPlanet;
+
+    public GameObject[] cluster;
+
+    public GameObject spawnLocation;
+
+    //FUNCTIONS
+
     void Start()
     {
-
+        cam= GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        rotateSpinner();
+        if (player != null)
+        {
+            rotateSpinner();
+
+            playerLeft();
+        }
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
@@ -45,6 +62,16 @@ public class PlanetController : MonoBehaviour
         spinSpeed = spinSpeed * -1;
     }
 
+    public void playerLeft()
+    {
+        if(spinner.transform.childCount==0)
+        {
+            player = null;
+
+            //Destroy(planet);
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if(other.tag=="Player" && Input.GetMouseButtonDown(1))
@@ -53,7 +80,21 @@ public class PlanetController : MonoBehaviour
 
             attachPlayerTospinner();
 
-            cam.transform.position = new Vector3(spinner.transform.position.x, 30, spinner.transform.position.z);
+            if (keyPlanet == true)
+            {
+                player.transform.localPosition =new Vector3(-10,0,0);
+
+                spawnNewCluster();
+            }
+
+            cam.transform.position = new Vector3(spinner.transform.position.x, 50, spinner.transform.position.z);
         }
+    }
+
+    public void spawnNewCluster()
+    {
+        int rand = Random.Range(0, cluster.Length);
+
+        Instantiate(cluster[rand], spawnLocation.transform.position, Quaternion.identity);
     }
 }

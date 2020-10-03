@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 539578785138136424}
   - component: {fileID: 539578785138136425}
   m_Layer: 0
-  m_Name: Planet (1)
+  m_Name: PlanetSpawnPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 11
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &539578785138136424
 MonoBehaviour:
@@ -64,6 +64,7 @@ MonoBehaviour:
   player: {fileID: 0}
   spinner: {fileID: 539578785463083716}
   cam: {fileID: 0}
+  planet: {fileID: 539578785138136422}
   spinSpeed: 40
 --- !u!54 &539578785138136425
 Rigidbody:
