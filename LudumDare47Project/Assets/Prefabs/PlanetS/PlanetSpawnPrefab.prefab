@@ -63,9 +63,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   spinner: {fileID: 539578785463083716}
-  cam: {fileID: 0}
   planet: {fileID: 539578785138136422}
+  cam: {fileID: 0}
   spinSpeed: 40
+  keyPlanet: 0
+  cluster: []
+  spawnLocation: {fileID: 0}
 --- !u!54 &539578785138136425
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -94,6 +97,7 @@ GameObject:
   - component: {fileID: 539578785337422707}
   - component: {fileID: 539578785337422704}
   - component: {fileID: 539578785337422705}
+  - component: {fileID: 2208572300853457460}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -130,7 +134,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539578785337422703}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -177,6 +181,25 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2208572300853457460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539578785337422703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f689aad7932ade49b63c648ca79b7d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planets:
+  - {fileID: 1702157077494997660, guid: 7f37530ba0f5cf44fa0dfd1a58a854b3, type: 3}
+  - {fileID: 3337606724722305106, guid: 3518117b819dbdd49b4fae738b9badc3, type: 3}
+  - {fileID: 9026704559338506417, guid: 3090601b0582f394a8be3728e0452d97, type: 3}
+  - {fileID: 3330818739223185593, guid: 206a9d8dc424ab34f93387751b9ad0bd, type: 3}
+  - {fileID: 8555803995524341094, guid: 8af7b03ad07aef0439faf84864bbcc5d, type: 3}
+  sphere: {fileID: 539578785337422703}
 --- !u!1 &539578785463083716
 GameObject:
   m_ObjectHideFlags: 0

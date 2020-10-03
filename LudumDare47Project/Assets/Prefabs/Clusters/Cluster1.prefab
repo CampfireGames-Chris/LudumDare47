@@ -310,7 +310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: cluster.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: cam
@@ -328,6 +328,10 @@ PrefabInstance:
       propertyPath: cluster.Array.data[0]
       value: 
       objectReference: {fileID: 3248519928732416718, guid: 5b5d4efa5d1400544aa449c846327d19, type: 3}
+    - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
+      propertyPath: cluster.Array.data[1]
+      value: 
+      objectReference: {fileID: 3985541400795476478, guid: a754abddcce1e98409fe3fff9e9f5fef, type: 3}
     - target: {fileID: 539578785138136426, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: m_LocalPosition.x
       value: 75

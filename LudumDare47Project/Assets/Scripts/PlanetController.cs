@@ -17,6 +17,12 @@ public class PlanetController : MonoBehaviour
 
     public int spinSpeed;
 
+    public float targetTime = 10.0f;
+
+    private float inTime;
+
+    public bool justLeft=false;
+
     [Space]
 
     public bool keyPlanet;
@@ -30,6 +36,8 @@ public class PlanetController : MonoBehaviour
     void Start()
     {
         cam= GameObject.Find("Main Camera").GetComponent<Camera>();
+
+        inTime = targetTime;
     }
 
     void Update()
@@ -44,6 +52,11 @@ public class PlanetController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             changeDirection();
+        }
+
+        if(justLeft==true)
+        {
+            timer();
         }
     }
 
@@ -68,26 +81,43 @@ public class PlanetController : MonoBehaviour
         {
             player = null;
 
+            justLeft = true;
+
             //Destroy(planet);
+        }
+    }
+
+    public void timer()
+    {
+        targetTime -= Time.deltaTime;
+
+        if (targetTime <= 0.0f)
+        {
+            justLeft = false;
+
+            targetTime = inTime;
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag=="Player" && Input.GetMouseButtonDown(1))
+        if (justLeft != true)
         {
-            player = other.gameObject;
-
-            attachPlayerTospinner();
-
-            if (keyPlanet == true)
+            if (other.tag == "Player" && Input.GetMouseButtonDown(1))
             {
-                player.transform.localPosition =new Vector3(-10,0,0);
+                player = other.gameObject;
 
-                spawnNewCluster();
+                attachPlayerTospinner();
+
+                if (keyPlanet == true)
+                {
+                    player.transform.localPosition = new Vector3(-10, 0, 0);
+
+                    spawnNewCluster();
+                }
+
+                // cam.transform.position = new Vector3(spinner.transform.position.x, 50, spinner.transform.position.z);
             }
-
-            cam.transform.position = new Vector3(spinner.transform.position.x, 50, spinner.transform.position.z);
         }
     }
 
