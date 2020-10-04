@@ -103,7 +103,7 @@ public class PlanetController : MonoBehaviour
     {
         if (justLeft != true)
         {
-            if (other.tag == "Player" && Input.GetMouseButtonDown(1))
+            if (other.tag == "Player" && Input.GetMouseButton(1))
             {
                 player = other.gameObject;
 
