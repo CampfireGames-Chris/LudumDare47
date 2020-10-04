@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject[] projectiles;
+
+    public GameObject[] playerCharacters;
+
+    public int selectedPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +20,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         transform.LookAt(transform.parent);
+    }
+
+    public void shoot()
+    {
+
     }
 }

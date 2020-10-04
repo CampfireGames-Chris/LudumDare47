@@ -25,6 +25,8 @@ public class PlanetController : MonoBehaviour
 
     [Space]
 
+    public bool largePlanet;
+
     public bool keyPlanet;
 
     public GameObject[] cluster;
@@ -108,6 +110,15 @@ public class PlanetController : MonoBehaviour
                 player = other.gameObject;
 
                 attachPlayerTospinner();
+
+                if(largePlanet==true)
+                {
+                    cam.transform.position=new Vector3(cam.transform.position.x,60,cam.transform.position.z);
+                }
+                else
+                {
+                    cam.transform.position = new Vector3(cam.transform.position.x, 30, cam.transform.position.z);
+                }
 
                 if (keyPlanet == true)
                 {

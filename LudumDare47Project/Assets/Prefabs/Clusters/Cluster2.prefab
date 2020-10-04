@@ -76,13 +76,33 @@ PrefabInstance:
       value: Planet (1)
       objectReference: {fileID: 0}
     - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
+      propertyPath: cluster.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: keyPlanet
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
+      propertyPath: spawnLocation
+      value: 
+      objectReference: {fileID: 7593483294348305978}
+    - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
+      propertyPath: cluster.Array.data[0]
+      value: 
+      objectReference: {fileID: 3985541400795476478, guid: a754abddcce1e98409fe3fff9e9f5fef, type: 3}
+    - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
+      propertyPath: cluster.Array.data[1]
+      value: 
+      objectReference: {fileID: 4873108982986752973, guid: 6425c80e744f676499fa8d9d9ebecd6d, type: 3}
+    - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
+      propertyPath: cluster.Array.data[2]
+      value: 
+      objectReference: {fileID: 6683164786824293855, guid: d8d09c8c1c18f2344bfe8d64508e091e, type: 3}
     - target: {fileID: 539578785138136426, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -151,7 +171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: cluster.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: cam
@@ -159,12 +179,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: keyPlanet
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: spawnLocation
       value: 
-      objectReference: {fileID: 7593483294348305978}
+      objectReference: {fileID: 0}
     - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: cluster.Array.data[0]
       value: 
@@ -254,6 +274,10 @@ PrefabInstance:
     - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: keyPlanet
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
+      propertyPath: largePlanet
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 539578785138136426, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: m_LocalPosition.x

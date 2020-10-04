@@ -66,6 +66,8 @@ MonoBehaviour:
   planet: {fileID: 539578785138136422}
   cam: {fileID: 0}
   spinSpeed: 40
+  targetTime: 10
+  justLeft: 0
   keyPlanet: 0
   cluster: []
   spawnLocation: {fileID: 0}
@@ -248,7 +250,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539578785463083716}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
