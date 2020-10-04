@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CharAnim : MonoBehaviour
 { 
@@ -14,9 +15,13 @@ public class CharAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetMouseButton(0))
         {
-            _myAnim.Play("Shoot");
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                _myAnim.Play("Shoot");
+            }
         }
     }
 }
