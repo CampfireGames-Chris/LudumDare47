@@ -9,6 +9,7 @@ TagManager:
   - Clusters
   - Scoreboard
   - WTF
+  - Enemy
   layers:
   - Default
   - TransparentFX

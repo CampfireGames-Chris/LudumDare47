@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject scoreboard;
+    
     public GameObject[] projectiles;
 
     public List<GameObject> playerCharacters;
@@ -12,7 +14,12 @@ public class PlayerController : MonoBehaviour
     public GameObject gameController;
 
     public GameObject activeCharacter;
-    
+
+
+    private void Start()
+    {
+        scoreboard = GameObject.FindGameObjectWithTag("Scoreboard");
+    }
 
     void Update()
     {
@@ -21,6 +28,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             activeCharacter.GetComponent<CharAnim>().ShootAnim();
+            Shoot();
         }
         
         if (Input.GetMouseButtonDown(1))
@@ -29,8 +37,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void shoot()
+    private void Shoot()
     {
+        if (Physics.Raycast(transform.position, transform.forward, out var hit))
+        {
+            if (hit.transform.gameObject.CompareTag("Enemy"))
+            {
+                Destroy(hit.transform.gameObject);
+                scoreboard.GetComponent<Scoreboard>().value++;
+            }
+        }
 
     }
 
