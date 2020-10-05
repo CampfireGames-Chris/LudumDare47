@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,9 +11,9 @@ public class PlayerController : MonoBehaviour
 
     public GameObject gameController;
 
-    public GameObject activeCharacter; 
+    public GameObject activeCharacter;
     
-    
+
     void Update()
     {
         transform.LookAt(transform.parent);
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
     public void SetPlayer()
     {
+        gameController = GameObject.FindGameObjectWithTag("GameController");
         DisableAllExcept(gameController.GetComponent<GameController>().chosenCharacter, playerCharacters);
     }
     
