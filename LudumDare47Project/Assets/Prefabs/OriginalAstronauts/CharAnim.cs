@@ -8,41 +8,22 @@ public class CharAnim : MonoBehaviour
     public Animator myAnim;
     public List<ParticleSystem> effects;
     public List<ParticleSystem> thrusterEffects;
-
-
-    // Start is called before the first frame update
-    void Start()
+    
+    public void ShootAnim()
     {
-        
+        myAnim.Play("Shoot");
+
+        foreach (var part in effects)
+        {
+            part.Play();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ThrusterAnim()
     {
-        
-        if (Input.GetMouseButton(0))
+        foreach (var part in thrusterEffects)
         {
-            if (!EventSystem.current.IsPointerOverGameObject())
-            {
-                myAnim.Play("Shoot");
-
-                foreach (var part in effects)
-                {
-                    part.Play();
-                }
-                
-            }
-        }
-        if (Input.GetMouseButton(1))
-        {
-            if (!EventSystem.current.IsPointerOverGameObject())
-            {
-                foreach (var part in thrusterEffects)
-                {
-                    part.Play();
-                }
-                
-            }
+            part.Play();
         }
     }
 }

@@ -8,26 +8,39 @@ public class PlayerController : MonoBehaviour
 
     public List<GameObject> playerCharacters;
 
-    public int selectedPlayer;
+    public GameObject gameController;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        DisableAllExcept(selectedPlayer, playerCharacters);
-    }
+    public GameObject activeCharacter; 
+    
     
     void Update()
     {
         transform.LookAt(transform.parent);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            activeCharacter.GetComponent<CharAnim>().ShootAnim();
+        }
+        
+        if (Input.GetMouseButtonDown(1))
+        {
+            activeCharacter.GetComponent<CharAnim>().ThrusterAnim();
+        }
     }
 
     public void shoot()
     {
 
     }
+
+    public void SetPlayer()
+    {
+        DisableAllExcept(gameController.GetComponent<GameController>().chosenCharacter, playerCharacters);
+    }
     
     private void DisableAllExcept(int choice, List<GameObject> objects)
     {
+        activeCharacter = objects[choice];
         foreach (var obj in objects)
         {
             obj.SetActive(obj == objects[choice]);

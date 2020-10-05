@@ -1145,6 +1145,7 @@ MonoBehaviour:
   - {fileID: 104990480}
   - {fileID: 225270489}
   gameController: {fileID: 885513554}
+  activeCharacter: {fileID: 0}
 --- !u!1001 &1725340502
 PrefabInstance:
   m_ObjectHideFlags: 0
