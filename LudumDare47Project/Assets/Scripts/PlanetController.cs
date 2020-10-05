@@ -38,6 +38,8 @@ public class PlanetController : MonoBehaviour
 
     public GameObject spawnLocation;
 
+    public GameObject gameController;
+
     //FUNCTIONS
 
     void Start()
@@ -54,6 +56,8 @@ public class PlanetController : MonoBehaviour
         }
 
         randomSpin();
+
+        gameController = GameObject.Find("GameController");
     }
 
     void Update()
@@ -120,6 +124,16 @@ public class PlanetController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if(other.tag=="WTF")
+        {
+            Destroy(planet);
+
+            if(player!=null)
+            {
+                gameController.GetComponent<GameController>().EndGame();
+            }
+        }
+
         if (justLeft != true)
         {
             if (other.tag == "Player" && Input.GetMouseButton(1))
