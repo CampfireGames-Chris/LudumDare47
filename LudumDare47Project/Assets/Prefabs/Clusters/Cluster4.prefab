@@ -82,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: cluster.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: cam
@@ -108,6 +108,10 @@ PrefabInstance:
       propertyPath: spawnLocation
       value: 
       objectReference: {fileID: 4873108984438700528}
+    - target: {fileID: 539578785138136424, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
+      propertyPath: cluster.Array.data[3]
+      value: 
+      objectReference: {fileID: 4365504723423298097, guid: 3673aa2927b25cf499e69d6453932f0b, type: 3}
     - target: {fileID: 539578785138136426, guid: 87be2719cdb791145bfba122a401ae80, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

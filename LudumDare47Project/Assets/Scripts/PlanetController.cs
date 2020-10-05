@@ -23,6 +23,10 @@ public class PlanetController : MonoBehaviour
 
     public bool justLeft=false;
 
+    public bool alreadySpawned = false;
+
+    public bool mainPlanet = false;
+
     [Space]
 
     public bool largePlanet;
@@ -40,6 +44,11 @@ public class PlanetController : MonoBehaviour
         cam= GameObject.Find("Main Camera").GetComponent<Camera>();
 
         inTime = targetTime;
+
+        if(mainPlanet==true)
+        {
+            spawnNewCluster();
+        }
     }
 
     void Update()
@@ -120,14 +129,14 @@ public class PlanetController : MonoBehaviour
                     cam.transform.position = new Vector3(cam.transform.position.x, 30, cam.transform.position.z);
                 }
 
-                if (keyPlanet == true)
+                if (keyPlanet == true && alreadySpawned==false)
                 {
                     player.transform.localPosition = new Vector3(-10, 0, 0);
 
                     spawnNewCluster();
-                }
 
-                // cam.transform.position = new Vector3(spinner.transform.position.x, 50, spinner.transform.position.z);
+                    alreadySpawned = true;
+                }
             }
         }
     }
