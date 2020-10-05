@@ -6,17 +6,16 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject[] projectiles;
 
-    public GameObject[] playerCharacters;
+    public List<GameObject> playerCharacters;
 
     public int selectedPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        DisableAllExcept(selectedPlayer, playerCharacters);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         transform.LookAt(transform.parent);
@@ -26,4 +25,13 @@ public class PlayerController : MonoBehaviour
     {
 
     }
+    
+    private void DisableAllExcept(int choice, List<GameObject> objects)
+    {
+        foreach (var obj in objects)
+        {
+            obj.SetActive(obj == objects[choice]);
+        }
+    }
+
 }

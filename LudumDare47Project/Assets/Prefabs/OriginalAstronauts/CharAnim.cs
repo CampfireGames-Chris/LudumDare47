@@ -5,7 +5,11 @@ using UnityEngine.EventSystems;
 
 public class CharAnim : MonoBehaviour
 { 
-    public Animator _myAnim;
+    public Animator myAnim;
+    public List<ParticleSystem> effects;
+    public List<ParticleSystem> thrusterEffects;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +24,24 @@ public class CharAnim : MonoBehaviour
         {
             if (!EventSystem.current.IsPointerOverGameObject())
             {
-                _myAnim.Play("Shoot");
+                myAnim.Play("Shoot");
+
+                foreach (var part in effects)
+                {
+                    part.Play();
+                }
+                
+            }
+        }
+        if (Input.GetMouseButton(1))
+        {
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                foreach (var part in thrusterEffects)
+                {
+                    part.Play();
+                }
+                
             }
         }
     }
