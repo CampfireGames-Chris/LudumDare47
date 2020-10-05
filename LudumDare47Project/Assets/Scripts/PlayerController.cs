@@ -43,7 +43,10 @@ public class PlayerController : MonoBehaviour
         {
             if (hit.transform.gameObject.CompareTag("Enemy"))
             {
-                Destroy(hit.transform.gameObject);
+                Debug.Log("hit enemy");
+                GameObject o;
+                (o = hit.transform.gameObject).GetComponentInChildren<ParticleSystem>().Play();
+                Destroy(o,1);
                 scoreboard.GetComponent<Scoreboard>().value++;
             }
         }

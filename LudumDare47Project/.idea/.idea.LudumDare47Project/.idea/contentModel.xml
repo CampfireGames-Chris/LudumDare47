@@ -15,7 +15,6 @@
         <e p="Scripts" t="Include">
           <e p="CameraFollow.cs" t="Include" />
           <e p="CharacterMenu.cs" t="Include" />
-          <e p="Enemy.cs" t="Include" />
           <e p="GameController.cs" t="Include" />
           <e p="KilluPlayer.cs" t="Include" />
           <e p="PlanetChooser.cs" t="Include" />
