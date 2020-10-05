@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlanetController : MonoBehaviour
 {
-
+    public GameObject scoreboard;
+    
     public GameObject player;
 
     public GameObject spinner;
@@ -41,6 +42,8 @@ public class PlanetController : MonoBehaviour
 
     void Start()
     {
+        scoreboard = GameObject.FindGameObjectWithTag("Scoreboard");
+        
         cam= GameObject.Find("Main Camera").GetComponent<Camera>();
 
         inTime = targetTime;
@@ -90,6 +93,9 @@ public class PlanetController : MonoBehaviour
     {
         if(spinner.transform.childCount==0)
         {
+
+            scoreboard.GetComponent<Scoreboard>().value++;
+
             player = null;
 
             justLeft = true;
