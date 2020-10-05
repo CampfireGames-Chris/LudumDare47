@@ -360,6 +360,7 @@ MonoBehaviour:
   menuScreen: {fileID: 7941102620259977398, guid: be5b037b04791c5459b4045950c14baa, type: 3}
   playerController: {fileID: 0}
   chosenCharacter: 0
+  clusters: []
 --- !u!4 &885513556
 Transform:
   m_ObjectHideFlags: 0

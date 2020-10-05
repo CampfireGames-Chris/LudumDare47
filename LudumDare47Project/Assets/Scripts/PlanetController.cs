@@ -52,6 +52,8 @@ public class PlanetController : MonoBehaviour
         {
             spawnNewCluster();
         }
+
+        randomSpin();
     }
 
     void Update()
@@ -152,5 +154,32 @@ public class PlanetController : MonoBehaviour
         int rand = Random.Range(0, cluster.Length);
 
         Instantiate(cluster[rand], spawnLocation.transform.position, Quaternion.identity);
+    }
+
+    public void randomSpin()
+    {
+        int i = Random.Range(0, 2);
+
+        if(i==0)
+        {
+            spinSpeed = 60;
+        }
+
+        if(i==1)
+        {
+            spinSpeed = 40;
+        }
+
+        if(i==2)
+        {
+            spinSpeed = 100;
+        }
+
+        int j = Random.Range(0, 2);
+
+        if(j==1)
+        {
+            spinSpeed = spinSpeed * (-1);
+        }
     }
 }
