@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ public class GameController : MonoBehaviour
     
     public GameObject playerController;
     public int chosenCharacter;
+
+    public GameObject[] clusters;
     
     // Start is called before the first frame update
     void Start()
@@ -44,6 +47,13 @@ public class GameController : MonoBehaviour
 
     public void EndGame()
     {
+        clusters = GameObject.FindGameObjectsWithTag("Clusters");
+        
+        foreach (var obj in clusters)
+        {
+            Destroy(obj);
+        }
+        
         Destroy(_thisGame);
         Instantiate(menuScreen);
         _thisMenu = GameObject.FindGameObjectWithTag("menuScreen");
