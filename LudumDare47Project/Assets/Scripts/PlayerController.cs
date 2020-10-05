@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             activeCharacter.GetComponent<CharAnim>().ShootAnim();
+            activeCharacter.GetComponentInChildren<AudioSource>().Play();
             Shoot();
         }
         
